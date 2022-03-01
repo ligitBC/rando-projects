@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="mathcall()">roll</button><br><br>
+<button onclick="mathy()" id="02">yes</button>
+<button onclick="mathn()" id="01">no</button>
+<p id="dem0"></p>
+<p id="demo"></p>
+<p id="demin"></p>
+<p id="demins"></p>
+<script>
+var option1 = document.getElementById("01");
+var option2 = document.getElementById("02");
+var option3 = document.getElementById("demo");
+var option4 = document.getElementById("dem0");
+var option5 = document.getElementById("demin");
+var option6 = document.getElementById("demins");
+var yahno = 0;
+
+function mathcall(){
+var num1 = Math.floor(Math.random() * 10 + 1);
+var num2 = Math.floor(Math.random() * 10 + 1);
+var truefalse = Math.floor(Math.random() * 10 + 1);
+var falsenum = Math.floor(Math.random() * 100 + 1);
+if (truefalse>5){
+option4.innerHTML = (num1)+"*"+(num2)+"="+(num1*num2);
+yahno = 1;
+option5.innerHTML = "";
+}
+else if((num1*num2)==falsenum){
+option4.innerHTML = (num1)+"*"+(num2)+"="+(num1*num2);
+yahno = 1;
+option5.innerHTML = "";
+}
+else{
+option4.innerHTML = (num1)+"*"+(num2)+"="+ falsenum;
+yahno = 0;
+option5.innerHTML = "";
+}}
+function mathy(){
+if (yahno){
+option5.innerHTML ="Correct";
+}
+else{
+option5.innerHTML ="Incorrect"
+}
+}
+function mathn(){
+if (yahno){
+option5.innerHTML ="Incorrect";
+}
+else{
+option5.innerHTML ="Correct"
+}
+}
+</script>
+
+</body>
+</html>
